@@ -1,10 +1,18 @@
 import React from 'react'
-import CoinsSlider from './CoinsSlider.tsx'
+import CoinsSlider from './CoinsSlider'
+import RecentCalls from './RecentCalls'
+import RecentCallResponsive from './RecentCallResponsive'
 
 const Hero = () => {
   return (
       <div>
-          <CoinsSlider/>
+      <CoinsSlider />
+      <div className='hidden mdl:block'>
+      <RecentCalls />
+      </div>
+      <div className='mdl:hidden'>
+      <RecentCallResponsive/>
+</div>
     </div>
   )
 }
