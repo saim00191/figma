@@ -60,7 +60,7 @@ export default {
   			sml: '680px',
   			md: '768px',
   			mdl: '820px',
-  			mdll: '920px',
+  			mdll: '900px',
   			lg: '1024px',
   			lgl: '1100px',
   			lgll: '1190px',

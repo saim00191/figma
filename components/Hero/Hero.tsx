@@ -7,10 +7,10 @@ const Hero = () => {
   return (
       <div>
       <CoinsSlider />
-      <div className='hidden mdl:block'>
+      <div className='hidden mdll:block'>
       <RecentCalls />
       </div>
-      <div className='mdl:hidden'>
+      <div className='mdll:hidden'>
       <RecentCallResponsive/>
 </div>
     </div>

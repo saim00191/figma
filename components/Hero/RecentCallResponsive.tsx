@@ -7,6 +7,7 @@ import Image3 from "@/public/assets/RecentCallImg3.png";
 import Image from "next/image";
 import { Nunito_Sans } from "next/font/google";
 import { ChevronDown, ChevronUp } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -15,7 +16,7 @@ const nunitoSans = Nunito_Sans({
 
 const CallDetails = ({ data, isOpen, toggleDropdown }) => (
   <div>
-    <div className="h-[54px] w-full  grid grid-cols-3 border-b border-b-[#262246] bg-[#111736]">
+    <div className="h-[54px] w-full grid grid-cols-3 border-b border-b-[#262246] bg-[#111736]">
       <div className="w-full xs:w-[101px] h-full flex items-center justify-center">
         <h3 className="text-mainColor text-[12px]">
           {data.token}{" "}
@@ -50,27 +51,35 @@ const CallDetails = ({ data, isOpen, toggleDropdown }) => (
       </div>
     </div>
 
-    {isOpen && (
-      <div className="bg-[#111736] px-4 py-3 text-mainColor">
-        {[
-          { label: "Date and Time (UTC)", value: `${data.Date} ${data.Time}` },
-          { label: "Buy Volume", value: data.BuyVloume },
-          { label: "Sell Volume", value: data.SellVolume },
-          { label: "Call Market Cap", value: data.CallMarketcap },
-        ].map((item, index) => (
-          <div key={index} className="grid grid-cols-3 py-2">
-            <h2 className="text-[12px] font-bold text-mainColor">
-              {item.label}
-            </h2>
-            <p
-              className={`${nunitoSans.className} text-[12px] xs:text-[14px] text-mainColor col-span-2 ml-4`}
-            >
-              {item.value}
-            </p>
-          </div>
-        ))}
-      </div>
-    )}
+    <AnimatePresence>
+      {isOpen && (
+        <motion.div
+          className="bg-[#111736] px-4 py-3 text-mainColor"
+          initial={{ height: 0, opacity: 0 }}
+          animate={{ height: "auto", opacity: 1 }}
+          exit={{ height: 0, opacity: 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          {[
+            { label: "Date and Time (UTC)", value: `${data.Date} ${data.Time}` },
+            { label: "Buy Volume", value: data.BuyVloume },
+            { label: "Sell Volume", value: data.SellVolume },
+            { label: "Call Market Cap", value: data.CallMarketcap },
+          ].map((item, index) => (
+            <div key={index} className="grid grid-cols-3 py-2">
+              <h2 className="text-[12px] font-bold text-mainColor">
+                {item.label}
+              </h2>
+              <p
+                className={`${nunitoSans.className} text-[12px] xs:text-[14px] text-mainColor col-span-2 ml-4`}
+              >
+                {item.value}
+              </p>
+            </div>
+          ))}
+        </motion.div>
+      )}
+    </AnimatePresence>
   </div>
 );
 
