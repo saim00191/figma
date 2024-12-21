@@ -65,7 +65,7 @@ export default {
         lgl: "1100px",
         lgll: "1190px",
         xl: "1250px",
-        xxl: "1400px",
+        xxl: "1440px",
         "2xl": "1536px",
       },
       borderRadius: {
