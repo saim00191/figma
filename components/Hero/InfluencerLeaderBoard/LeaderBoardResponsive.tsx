@@ -8,13 +8,14 @@ import { Nunito_Sans } from "next/font/google";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import LeaderboardItems from "./LeaderBoardItem";
+import CallDetailsProps from "./type";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
-const CallDetails = ({ data, isOpen, toggleDropdown }: any) => (
+const CallDetails = ({ data, isOpen, toggleDropdown }:CallDetailsProps) => (
   <div>
     <div className="h-[54px] w-full grid grid-cols-3 border-b border-b-[#262246] bg-[#111736]">
       <div className="w-full xs:w-[101px] h-full flex items-center justify-center">

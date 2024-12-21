@@ -11,7 +11,27 @@ const nunitoSans = Nunito_Sans({
   weight: ["400", "700"],
 });
 
-const CallDetails = ({ data, isOpen, toggleDropdown }: any) => (
+interface CallDetailData {
+  SNo: number;
+  isPlus: boolean;
+  isMinus: boolean;
+  Ticker: string;
+  NumberOfMentions: number;
+  HighestVolume: string;
+  influencer: string;
+  FirstInfluencer: string;
+  SecondInfluencer: string;
+  ThirdInfluencer: string;
+}
+
+interface CallDetailsProps {
+  data: CallDetailData;
+  isOpen: boolean;
+  toggleDropdown: () => void;
+}
+
+
+const CallDetails = ({ data, isOpen, toggleDropdown }:CallDetailsProps) => (
   <div>
     <div className="h-[54px] w-full grid grid-cols-4 border-b border-b-[#262246] bg-[#111736]">
       <div className="w-full xs:w-[101px] h-full flex items-center justify-center">
