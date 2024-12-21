@@ -35,6 +35,8 @@ const CoinsSlider = () => {
     sliderRef.current.scrollLeft = scrollLeft - walk;
   };
   return (
+    <div>
+
     <div className="mt-2 px-[16px] ">
       <div className="container h-[46px] bg-[#111736] rounded-[58px] sm:rounded-[9px] px-2 sm:overflow-x-scroll no-scrollbar flex items-center  py-[16px] gap-[18px] flex-shrink-0 ">
         <div className="h-auto gap-3 xs:h-[30px] flex flex-col xs:flex-row items-center w-full xs:w-[359px] ">
@@ -196,6 +198,133 @@ const CoinsSlider = () => {
           </div>
         </div>
       </div>
+        <div
+          ref={sliderRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className="flex gap-[18px] items-center sm:hidden overflow-x-auto no-scrollbar h-[46px] bg-[#111736] rounded-[7px] my-3 px-[13px]  "
+        >
+          <div className="flex items-center justify-center  h-[20px]  gap-[8px] py-[13px] px-[18px]">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #3
+            </p>
+            <Image
+              src={Image2}
+              alt="Image2"
+              className="h-[20px] w-[20px] rounded-full border border-white"
+            />
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              DUCKY
+            </p>
+            <p className="text-[#C2353E] font-normal text-[14px] leading-normal">
+              -13.74%
+            </p>
+          </div>
+          <div className="flex items-center justify-center w-[   h-[20px]  gap-[8px] ">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #4
+            </p>
+            <Image
+              src={Image2}
+              alt="Image2"
+              className="h-[20px] w-[20px] rounded-full border border-white"
+            />
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              Terra
+            </p>
+            <div className="flex items-center gap-1">
+              <p className="text-[#16B967] flex items-center font-normal text-[14px] leading-normal">
+                +113,536%
+              </p>
+              <p className="text-[#FFC762] font-normal text-[14px]  "> I </p>
+              <p className="text-[#FFC762] font-normal text-[14px]  "> 22h </p>
+            </div>
+          </div>
+          <div className="flex items-center justify-center  h-[20px]  gap-[8px] py-[13px] px-[18px]">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #5
+            </p>
+            <Image
+              src={Image2}
+              alt="Image2"
+              className="h-[20px] w-[20px] rounded-full border border-white"
+            />
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              DEXT
+            </p>
+            <p className="text-[#C2353E] font-normal text-[14px] leading-normal">
+              -2.52%
+            </p>
+          </div>
+          <div className="flex items-center justify-center  h-[20px]  gap-[8px] py-[13px] px-[18px]">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #6
+            </p>
+            <Image
+              src={Image2}
+              alt="Image2"
+              className="h-[20px] w-[20px] rounded-full border border-white"
+            />
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              SLAP
+            </p>
+            <p className="text-[#16B967] font-normal text-[14px] leading-normal">
+              +93.52%
+            </p>
+          </div>
+          <div className="flex items-center justify-center  h-[20px]  gap-[8px] py-[13px] px-[18px]">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #6
+            </p>
+            <Image
+              src={Image2}
+              alt="Image2"
+              className="h-[20px] w-[20px] rounded-full border border-white"
+            />
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              SBR
+            </p>
+            <p className="text-[#C2353E] font-normal text-[14px] leading-normal">
+              -2.52%
+            </p>
+          </div>
+          <div className=" h-[20px] flex items-center gap-1 justify-center">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #7
+            </p>
+            <span className="w-5 h-5 rounded-full bg-[#6E62E5] flex items-center justify-center text-[13px] text-mainColor font-normal">
+              ?
+            </span>
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              ???
+            </p>
+          </div>
+          <div className=" h-[20px] flex items-center gap-1 justify-center">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #8
+            </p>
+            <span className="w-5 h-5 rounded-full bg-[#6E62E5] flex items-center justify-center text-[13px] text-mainColor font-normal">
+              ?
+            </span>
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              ???
+            </p>
+          </div>
+          <div className=" h-[20px] flex items-center gap-1 justify-center">
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              #9
+            </p>
+            <span className="w-5 h-5 rounded-full bg-[#6E62E5] flex items-center justify-center text-[13px] text-mainColor font-normal">
+              ?
+            </span>
+            <p className="text-mainColor font-normal text-[14px] leading-normal">
+              ???
+            </p>
+          </div>
+        </div>
+    </div>
     </div>
   );
 };
