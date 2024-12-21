@@ -1,0 +1,43 @@
+const statesPanelItems = [
+    {
+      SNo: 1,
+      Ticker: "$TRAC",
+      HighestVolume: "$81,000",
+      influencer: "@IncomeSharks",
+      FirstInfluencer: "@IncomeSharks",
+      SecondInfluencer: "@AltcoinSensei",
+      ThirdInfluencer: "@GemsOfRa",
+      NumberOfMentions: 250,
+    },
+    {
+      SNo: 2,
+      Ticker: "$TRACK",
+      HighestVolume: "$44,000",
+      influencer: "@nevershill",
+      FirstInfluencer: "@nevershill",
+      SecondInfluencer: "@AdamHODL",
+      ThirdInfluencer: "@Berniefrogger",
+      NumberOfMentions: 120,
+    },
+    {
+      SNo: 3,
+      Ticker: "$TRACK",
+      HighestVolume: "$44,000",
+      influencer: "@nevershill",
+      FirstInfluencer: "@nevershill",
+      SecondInfluencer: "@AdamHODL",
+      ThirdInfluencer: "@Berniefrogger",
+      NumberOfMentions: 120,
+    },
+    {
+      SNo: 4,
+      Ticker: "$TRACK",
+      HighestVolume: "$44,000",
+      influencer: "@nevershill",
+      FirstInfluencer: "@nevershill",
+      SecondInfluencer: "@AdamHODL",
+      ThirdInfluencer: "@Berniefrogger",
+      NumberOfMentions: 120,
+    },
+];
+  export default statesPanelItems

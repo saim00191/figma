@@ -1,38 +1,40 @@
 "use client";
 
 import React, { useState } from "react";
-import Image1 from "@/public/assets/RecentCallImg1.png";
-import Image2 from "@/public/assets/RecentCallImg2.png";
-import Image3 from "@/public/assets/RecentCallImg3.png";
 import Image from "next/image";
 import { Nunito_Sans } from "next/font/google";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import { RiArrowRightSLine } from "react-icons/ri";
+import callData from "./callData";
+import { CallDetailsProps } from "./types";
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
-const CallDetails = ({ data, isOpen, toggleDropdown }) => (
+const CallDetails = ({ data, isOpen, toggleDropdown }: CallDetailsProps) => (
   <div>
     <div className="h-[54px] w-full grid grid-cols-3 border-b border-b-[#262246] bg-[#111736]">
       <div className="w-full xs:w-[101px] h-full flex items-center justify-center">
         <h3 className="text-mainColor text-[12px]">
           {data.token}{" "}
-          <span className={data.isPlus ? "text-[#16B967]" : "text-[#E53E3E]"}>
-            {data.isPlus || data.isMinus}
+          <span className={data.isMinus ? "text-[#E53E3E] " : "text-[#16B967]"}>
+            {data.change || data.change}
           </span>
         </h3>
       </div>
       <div className="w-full xs:w-[194px] h-full flex items-center justify-start ml-4 xsm:ml-1">
         <div className="flex items-center">
           <Image
-            src={data.image}
+            src={data.influencer.image}
             alt="Influencer Avatar"
             className="w-[26px] h-[26px] hidden xs:flex"
           />
-          <p className="text-[12px] text-mainColor ml-2">{data.Influencer}</p>
+          <p className="text-[12px] text-mainColor ml-2">
+            {data.influencer.name}
+          </p>
         </div>
       </div>
       <div className="flex items-center justify-end ml-8 xs:ml-12 xsm:ml-20">
@@ -61,10 +63,10 @@ const CallDetails = ({ data, isOpen, toggleDropdown }) => (
           transition={{ duration: 0.3 }}
         >
           {[
-            { label: "Date and Time (UTC)", value: `${data.Date} ${data.Time}` },
-            { label: "Buy Volume", value: data.BuyVloume },
-            { label: "Sell Volume", value: data.SellVolume },
-            { label: "Call Market Cap", value: data.CallMarketcap },
+            { label: "Date and Time (UTC)", value: `${data.dateTime} ` },
+            { label: "Buy Volume", value: data.buyVolume },
+            { label: "Sell Volume", value: data.sellVolume },
+            { label: "Call Market Cap", value: data.marketCap },
           ].map((item, index) => (
             <div key={index} className="grid grid-cols-3 py-2">
               <h2 className="text-[12px] font-bold text-mainColor">
@@ -84,42 +86,6 @@ const CallDetails = ({ data, isOpen, toggleDropdown }) => (
 );
 
 const RecentCallResponsive = () => {
-  const recentCalls = [
-    {
-      token: "$M87",
-      isPlus: "+23%",
-      Date: "20 May 2024",
-      Time: "22:00:30",
-      image: Image1,
-      Influencer: "@IncomeSharks",
-      BuyVloume: "$75,000",
-      SellVolume: "$75,000",
-      CallMarketcap: "$486m",
-    },
-    {
-      token: "$PNUT",
-      isMinus: "-23%",
-      Date: "20 May 2024",
-      Time: "21:45:22",
-      image: Image2,
-      Influencer: "@EricCryptoman",
-      BuyVloume: "$97,234",
-      SellVolume: "$97,234",
-      CallMarketcap: "$1.4b",
-    },
-    {
-      token: "$SPEC",
-      isPlus: "+48%",
-      Date: "20 May 2024",
-      Time: "21:01:06",
-      image: Image3,
-      Influencer: "@GemsOfRa",
-      BuyVloume: "$97,234",
-      SellVolume: "$97,234",
-      CallMarketcap: "$52m",
-    },
-  ];
-
   const [openIndexes, setOpenIndexes] = useState<number[]>([]);
 
   const toggleDropdown = (index: number) => {
@@ -134,6 +100,9 @@ const RecentCallResponsive = () => {
         <h2 className="text-[18px] text-mainColor font-semibold">
           Recent Calls
         </h2>
+        <span>
+          <RiArrowRightSLine className=" text-[#6E62E5]" size={22} />
+        </span>
       </div>
 
       <div className="h-[54px] mb-2 rounded-[7px] bg-[#111736] mt-3 px-[16px] grid grid-cols-3 py-2">
@@ -145,7 +114,7 @@ const RecentCallResponsive = () => {
         </h3>
       </div>
 
-      {recentCalls.map((call, index) => (
+      {callData.slice(0, 4).map((call, index) => (
         <CallDetails
           key={index}
           data={call}

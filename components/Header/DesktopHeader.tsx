@@ -11,11 +11,12 @@ const inter = Inter({
 const DesktopHeader = () => {
   return (
     <div className="bg-[#111736]">
-      <div className="max-w-[1440px] px-4 md:px-[24px]  m-auto md:bg-[#111736] text-white h-[72px] flex items-center justify-between">
+      <div className="max-w-[1440px] px-4 md:px-[24px]  mx-auto md:bg-[#111736] text-white h-[72px] flex items-center justify-between">
       <div className="flex">
-        <div className="w-[54px] h-[54px]">
-          <Image src={Logo} alt="Logo" className="w-full h-full" />
-        </div>
+      <div className="w-[54px] h-[54px]">
+  <Image src={Logo} alt="Logo" width={54} height={54} className="w-full h-full" />
+</div>
+
         <ul className="md:flex items-center gap-[20px] pl-4 sm:pl-[20px] mdl:pl-[50px] lg:pl-[90px] py-4 w-full hidden">
           {["Home", "Recent Calls", "Follow up calls", "Token Stats"].map(
             (item, index) => (
