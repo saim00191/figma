@@ -91,8 +91,8 @@ const Leaderboard = () => {
         </div>
 
         <div className="flex flex-col gap-[1px] h-[275px] overflow-y-scroll scrollbar-custom">
-          {LeaderboardItems.map((item) => (
-            <div className="flex items-center bg-[#111736] justify-between py-2 px-4 text-slate-200 h-[57px] text-sm md:text-base">
+          {LeaderboardItems.map((item ) => (
+            <div key={item.SNo} className="flex items-center bg-[#111736] justify-between py-2 px-4 text-slate-200 h-[57px] text-sm md:text-base">
               <div className="text-center w-[60px] lg:w-[80px]">{item.SNo}</div>
               <div className="text-center w-[150px] md:w-[220px] flex items-center justify-center">
                 <div className="flex items-center gap-2 w-full">

@@ -1,8 +1,6 @@
 import React from "react";
 import Image1 from "@/public/assets/3InfluencerImg1.png";
-import Image2 from "@/public/assets/3InfluencerImg2.png";
 import Image3 from "@/public/assets/3InfluencerImg3.png";
-import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import Image from "next/image";
 import { MdArrowForwardIos } from "react-icons/md";
 
