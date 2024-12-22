@@ -1,6 +1,7 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
-import TokenStatsPanelItems from "../TokenStatsPanelItems";
+import TokenStatsPanelItems from "../PlatformStatsItems";
+
 const header = [
   "S/N",
   "Ticker",
@@ -104,7 +105,10 @@ const TokenStatsPanel = () => {
           </div>
           <div className="flex gap-[1px]  h-[170px] py-1 items-start justify-between flex-col  overflow-y-scroll  scrollbar-custom">
             {statesPanelItems.map((item) => (
-              <div key={item.SNo} className="w-full h-[100px]  justify-items-center grid grid-cols-5 bg-[#111736] justify-between rounded-[7px] py-1">
+              <div
+                key={item.SNo}
+                className="w-full h-[100px]  justify-items-center grid grid-cols-5 bg-[#111736] justify-between rounded-[7px] py-1"
+              >
                 <div className="flex items-center justify-center lgl:-ml-8">
                   <p className="text-[14px] text-mainColor">{item.SNo}</p>
                 </div>

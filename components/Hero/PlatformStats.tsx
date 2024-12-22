@@ -1,5 +1,5 @@
 import React from "react";
-import TokenStatsPanelItems from "./TokenStatsPanelItems";
+import TokenStatsPanelItems from "./PlatformStatsItems";
 
 const PlatformStats = () => {
   return (

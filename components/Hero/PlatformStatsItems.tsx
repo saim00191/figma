@@ -1,4 +1,4 @@
-const TokenStatsPanelItems = [
+const PlatformStats = [
   {
     backgroundColor: '#222456',
     icon: (
@@ -274,4 +274,4 @@ const TokenStatsPanelItems = [
   },
 ];
 
-export default TokenStatsPanelItems;
+export default PlatformStats;
