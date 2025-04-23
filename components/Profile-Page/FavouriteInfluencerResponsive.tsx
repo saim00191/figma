@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Nunito_Sans } from "next/font/google";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { RiArrowRightSLine } from "react-icons/ri";
 import { FavouriteInfluencerItems } from "./FavouriteInfluencerItems";
 
 export interface FavouriteInfluencer {
