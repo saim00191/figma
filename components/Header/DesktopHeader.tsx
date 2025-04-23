@@ -9,6 +9,13 @@ const inter = Inter({
   weight: ["400", "700"],
 });
 
+const navItems = [
+  { name: "Home", href: "/" },
+  { name: "Recent Calls", href: "/recent-calls" },
+  { name: "Follow up calls", href: "/follow-up-calls" },
+  { name: "Token Stats", href: "/token-stats" },
+];
+
 const DesktopHeader = () => {
   return (
     <div className="bg-[#111736]">
@@ -25,24 +32,25 @@ const DesktopHeader = () => {
           </div>
 
           <ul className="md:flex items-center gap-[20px] pl-4 sm:pl-[20px] mdl:pl-[50px] lg:pl-[90px] py-4 w-full hidden">
-            {["Home", "Recent Calls", "Follow up calls", "Token Stats"].map(
-              (item, index) => (
-                <li
-                  key={index}
+            {navItems.map((item, index) => (
+              <li key={index}>
+                <Link
+                  href={item.href}
                   className={`${inter.className} text-[#FFFFFF]/50 hover:text-white text-[12px] lg:text-[14px] sm:text-[16px] leading-normal font-normal cursor-pointer`}
                 >
-                  {item}
-                </li>
-              )
-            )}
+                  {item.name}
+                </Link>
+              </li>
+            ))}
           </ul>
         </div>
         <div className="flex items-center gap-5">
-          <Link href={"/pricing-page"}
+          <Link
+            href={"/pricing-page"}
             className={`${inter.className} hidden w-[160px] lg:w-[175px]  h-[40px] lg:flex items-center cursor-pointer text-[#6E62E5] font-medium text-[12px] lg:text-[14px] leading-normal justify-center gap-[10px]  p-[10px] rounded-[6px] bg-[#6E62E529] `}
           >
             Pricing Page
-          </Link >
+          </Link>
           <div className=" h-[24px]  flex-shrink-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -77,25 +85,25 @@ const DesktopHeader = () => {
             </svg>
           </div>
           <Link href={"/profile-page"}>
-          <div className=" h-[32px] gap-2 flex-shrink-0 flex items-center justify-between">
-            <Image
-              src={User}
-              alt="User"
-              className="rounded-full w-[32px] h-[32px]"
-            />
-            <div className="flex flex-col justify-between">
-              <h5
-                className={`${inter.className} text-[14px] text-[#F1F1F1] leading-normal font-medium`}
-              >
-                Solemn Captain
-              </h5>
-              <h6
-                className={`${inter.className} text-[12px] text-[#BCBCBC] leading-normal font-normal`}
-              >
-                Admin
-              </h6>
+            <div className=" h-[32px] gap-2 flex-shrink-0 flex items-center justify-between">
+              <Image
+                src={User}
+                alt="User"
+                className="rounded-full w-[32px] h-[32px]"
+              />
+              <div className="flex flex-col justify-between">
+                <h5
+                  className={`${inter.className} text-[14px] text-[#F1F1F1] leading-normal font-medium`}
+                >
+                  Solemn Captain
+                </h5>
+                <h6
+                  className={`${inter.className} text-[12px] text-[#BCBCBC] leading-normal font-normal`}
+                >
+                  Admin
+                </h6>
+              </div>
             </div>
-          </div>
           </Link>
         </div>
       </div>

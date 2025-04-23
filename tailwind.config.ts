@@ -57,7 +57,7 @@ export default {
         xsm: "420px",
         smx: "550px",
         sm: "640px",
-        sml: "680px",
+        sml: "690px",
         md: "768px",
         mdl: "820px",
         mdll: "900px",

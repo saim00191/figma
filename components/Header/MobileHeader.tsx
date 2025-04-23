@@ -19,6 +19,10 @@ const MobileHeader = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLinkClick = () => {
+    setIsOpen(false);
+  };
+
   useEffect(() => {
     if (isOpen) {
       document.body.style.overflow = "hidden";
@@ -31,7 +35,8 @@ const MobileHeader = () => {
     { item: "Home", href: "/" },
     "Recent Calls",
     "Follow up calls",
-    "Token Stats",
+    { item:  "Token Stats", href: "/token-stats" },
+   
     "Notifications",
     "Questions",
     { item: "Pricing Page", href: "/pricing-page" },
@@ -95,7 +100,7 @@ const MobileHeader = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <p className="text-[16px] text-mainColor">
-                    <Link href={typeof item === "string" ? "#" : item.href}>
+                    <Link href={typeof item === "string" ? "#" : item.href} onClick={handleLinkClick}>
                       {typeof item === "string" ? item : item.item}
                     </Link>
                   </p>
