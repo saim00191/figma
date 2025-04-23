@@ -11,6 +11,7 @@ import Image4 from "@/public/assets/MobileResponsiveImg4.png";
 import Image5 from "@/public/assets/MobileResponsiveImg5.png";
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const MobileHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,13 +28,13 @@ const MobileHeader = () => {
   }, [isOpen]);
 
   const navLinks = [
-    "Home",
+    { item: "Home", href: "/" },
     "Recent Calls",
     "Follow up calls",
     "Token Stats",
     "Notifications",
     "Questions",
-    "Pricing Page",
+    { item: "Pricing Page", href: "/pricing-page" },
   ];
   const images = [Image1, Image2, Image3, Image4, Image5];
 
@@ -88,12 +89,16 @@ const MobileHeader = () => {
             <div className="h-[364px]  py-6 xsm:py-9 sm:py-14">
               {navLinks.map((item, index) => (
                 <motion.div
-                  key={item}
+                  key={index}
                   className="px-[30px] py-[10px] h-[52px] flex items-center justify-between"
                   variants={itemVariants}
                   transition={{ delay: index * 0.1 }}
                 >
-                  <p className="text-[16px] text-mainColor">{item}</p>
+                  <p className="text-[16px] text-mainColor">
+                    <Link href={typeof item === "string" ? "#" : item.href}>
+                      {typeof item === "string" ? item : item.item}
+                    </Link>
+                  </p>
                   <svg
                     width="8"
                     height="14"
@@ -147,4 +152,3 @@ const MobileHeader = () => {
 };
 
 export default MobileHeader;
-

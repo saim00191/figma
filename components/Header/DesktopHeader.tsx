@@ -2,6 +2,7 @@ import Image from "next/image";
 import Logo from "@/public/assets/Logo.png";
 import User from "@/public/assets/userImg.png";
 import { Inter } from "next/font/google";
+import Link from "next/link";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -37,11 +38,11 @@ const DesktopHeader = () => {
           </ul>
         </div>
         <div className="flex items-center gap-5">
-          <button
+          <Link href={"/pricing-page"}
             className={`${inter.className} hidden w-[160px] lg:w-[175px]  h-[40px] lg:flex items-center cursor-pointer text-[#6E62E5] font-medium text-[12px] lg:text-[14px] leading-normal justify-center gap-[10px]  p-[10px] rounded-[6px] bg-[#6E62E529] `}
           >
             Pricing Page
-          </button>
+          </Link >
           <div className=" h-[24px]  flex-shrink-0">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -75,6 +76,7 @@ const DesktopHeader = () => {
               <circle cx="20" cy="4" r="4" fill="#F9837C" />
             </svg>
           </div>
+          <Link href={"/profile-page"}>
           <div className=" h-[32px] gap-2 flex-shrink-0 flex items-center justify-between">
             <Image
               src={User}
@@ -94,6 +96,7 @@ const DesktopHeader = () => {
               </h6>
             </div>
           </div>
+          </Link>
         </div>
       </div>
     </div>

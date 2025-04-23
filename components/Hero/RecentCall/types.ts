@@ -9,15 +9,15 @@ export interface Influencer {
   
   export interface CallData {
     token: string;
-    change: string; // Representing change like "+23%" or "-12%"
-    dateTime: string; // Combined Date and Time
-    influencer: Influencer; // Updated to match the object structure
+    change: string; 
+    dateTime: string; 
+    influencer: Influencer;
     buyVolume: string;
     sellVolume: string;
       marketCap: string;
     changeColor: string;
-    isPlus?: boolean; // Optional property to determine if the change is positive
-    isMinus?: boolean; // Optional property to determine if the change is negative
+    isPlus?: boolean; 
+    isMinus?: boolean; 
   }
 
 export interface CallDetailsProps {

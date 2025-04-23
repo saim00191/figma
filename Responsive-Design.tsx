@@ -1,15 +1,32 @@
-"use client";
-
-import React, { useState } from "react";
-import Image from "next/image";
-import { Nunito_Sans } from "next/font/google";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiArrowRightSLine } from "react-icons/ri";
-import callData from "./callData";
-import { CallDetailsProps } from "./types";
+import Image, { StaticImageData } from "next/image";
+import { Nunito_Sans } from "next/font/google";
 
+export interface Influencer {
+    name: string;
+    image: StaticImageData;
+  }
+  
+  export interface CallData {
+    token: string;
+    change: string; 
+    dateTime: string; 
+    influencer: Influencer;
+    buyVolume: string;
+    sellVolume: string;
+    marketCap: string;
+    changeColor: string;
+    isPlus?: boolean; 
+    isMinus?: boolean; 
+  }
 
+export interface CallDetailsProps {
+  data: CallData;
+  isOpen: boolean;
+  toggleDropdown: () => void;
+}
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
@@ -87,45 +104,4 @@ const CallDetails = ({ data, isOpen, toggleDropdown }: CallDetailsProps) => (
   </div>
 );
 
-const RecentCallResponsive = () => {
-  const [openIndexes, setOpenIndexes] = useState<number[]>([]);
-
-  const toggleDropdown = (index: number) => {
-    setOpenIndexes((prev) =>
-      prev.includes(index) ? prev.filter((i) => i !== index) : [...prev, index]
-    );
-  };
-
-  return (
-    <div className="mt-8 container w-full h-auto">
-      <div className="flex items-center justify-between py-4">
-        <h2 className="text-[18px] text-mainColor font-semibold">
-          Recent Calls
-        </h2>
-        <span>
-          <RiArrowRightSLine className=" text-[#6E62E5]" size={22} />
-        </span>
-      </div>
-
-      <div className="h-[54px] mb-2 rounded-[7px] bg-[#111736] mt-3 px-[16px] grid grid-cols-3 py-2">
-        <h3 className="w-full xs:w-[65px] h-full -ml-4 xs:-ml-0 text-mainColor text-start flex items-center justify-center">
-          Token
-        </h3>
-        <h3 className="w-full xs:w-[231px] text-mainColor h-full flex items-center justify-start ml-6 xs:ml-0">
-          Influencer
-        </h3>
-      </div>
-
-      {callData.slice(0, 4).map((call, index) => (
-        <CallDetails
-          key={index}
-          data={call}
-          isOpen={openIndexes.includes(index)}
-          toggleDropdown={() => toggleDropdown(index)}
-        />
-      ))}
-    </div>
-  );
-};
-
-export default RecentCallResponsive;
+export default CallDetails;
