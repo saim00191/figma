@@ -6,33 +6,29 @@ import { Nunito_Sans } from "next/font/google";
 import { ChevronDown, ChevronUp } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { RiArrowRightSLine } from "react-icons/ri";
-import {RecentCallsItems ,finalItems} from "./RecentCallsItems";
+import { finalItems } from "./RecentCallsItems";
 import { RecentCallTypes } from "./RecentCallsItems";
-import Image1 from '@/public/assets/3InfluencerImg1.png';
-import Image2 from '@/public/assets/3InfluencerImg2.png';
-import Image3 from '@/public/assets/3InfluencerImg3.png';
+import Image1 from "@/public/assets/3InfluencerImg1.png";
+import Image2 from "@/public/assets/3InfluencerImg2.png";
+import Image3 from "@/public/assets/3InfluencerImg3.png";
 
-const imageCycle = [Image1 , Image2 , Image3]
+const imageCycle = [Image1, Image2, Image3];
 
 const nunitoSans = Nunito_Sans({
   subsets: ["latin"],
   weight: ["400", "700"],
 });
 
-// const firstTwo = RecentCallsItems.slice(0, 2);
-// const rest = RecentCallsItems.slice(2);
-// const repeated = Array.from({ length: 13 }, (_, i) => rest[i % rest.length]);
-// const finalItems = [...firstTwo, ...repeated];
-
-const RecentCallResponsiveDetails = ({ data, isOpen, toggleDropdown ,index }: RecentCallTypes  & { index: number } ) => (
-  
-    
-    <div>
+const RecentCallResponsiveDetails = ({
+  data,
+  isOpen,
+  toggleDropdown,
+  index,
+}: RecentCallTypes & { index: number }) => (
+  <div>
     <div className="h-[54px] w-full grid grid-cols-3 border-b border-b-[#262246] bg-[#111736]">
       <div className="w-full xs:w-[101px] h-full flex items-center justify-center">
-        <h3 className="text-mainColor text-[12px]">
-         {index + 1}
-        </h3>
+        <h3 className="text-mainColor text-[12px]">{index + 1}</h3>
       </div>
       <div className="w-full xs:w-[194px] h-full flex items-center justify-start ml-4 xsm:ml-1">
         <div className="flex items-center">
@@ -41,9 +37,7 @@ const RecentCallResponsiveDetails = ({ data, isOpen, toggleDropdown ,index }: Re
             alt="Influencer Avatar"
             className="w-[26px] h-[26px] hidden xs:flex"
           />
-          <p className="text-[12px] text-mainColor ml-2">
-            {data.influencer}
-          </p>
+          <p className="text-[12px] text-mainColor ml-2">{data.influencer}</p>
         </div>
       </div>
       <div className="flex items-center justify-end ml-8 xs:ml-12 xsm:ml-20">
@@ -72,7 +66,6 @@ const RecentCallResponsiveDetails = ({ data, isOpen, toggleDropdown ,index }: Re
           transition={{ duration: 0.3 }}
         >
           {[
-
             { label: "Token", value: `${data.token} ` },
             { label: "Date and Time (UTC)", value: `${data.dateTime} ` },
             { label: "Buy Volume", value: data.buyVolume },
@@ -126,8 +119,8 @@ const RecentCallResponsive = () => {
 
       {finalItems.map((call, index) => (
         <RecentCallResponsiveDetails
-              key={index}
-              index={index}
+          key={index}
+          index={index}
           data={call}
           isOpen={openIndexes.includes(index)}
           toggleDropdown={() => toggleDropdown(index)}
