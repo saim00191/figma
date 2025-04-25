@@ -42,12 +42,12 @@ const RecentCalls = () => {
                 {call.buyVolume}
               </div>
               <div
-  className={`flex items-center justify-center p-[10px] h-[59px] w-full ${
-    call.isRed ? "text-[#C2353E]" : "text-mainColor"
-  }`}
->
-  {call.priceChange}
-</div>
+                className={`flex items-center justify-center p-[10px] h-[59px] w-full ${
+                  call.isRed ? "text-[#C2353E]" : "text-[#16B967]"
+                }`}
+              >
+                {call.priceChange}
+              </div>
             </div>
           ))}
         </div>
