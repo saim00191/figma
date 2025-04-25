@@ -1,7 +1,0 @@
-User-agent: *
-Disallow: /api/
-Disallow: /admin/
-Disallow: /private/
-Allow: /
-
-Sitemap: https://figma-design001.vercel.app/sitemap.xml
