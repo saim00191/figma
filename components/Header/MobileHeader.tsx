@@ -33,10 +33,11 @@ const MobileHeader = () => {
 
   const navLinks = [
     { item: "Home", href: "/" },
-    "Recent Calls",
-    "Follow up calls",
-    { item:  "Token Stats", href: "/token-stats" },
-   
+    { item: "Recent Calls", href: "/recent-calls" },
+    { item: "Follow up calls", href: "/follow-up-calls" },
+    { item: "Token Stats", href: "/token-stats" },
+    { item: "Influencer Individual Stats", href: "/influencer-individual-stats" },
+
     "Notifications",
     "Questions",
     { item: "Pricing Page", href: "/pricing-page" },
@@ -60,14 +61,18 @@ const MobileHeader = () => {
         whileHover={{ scale: 1.1 }}
         whileTap={{ scale: 0.9 }}
       >
-        <Image src={User} alt="User" />
+        <Link href={"/profile-page"}>
+          <Image src={User} alt="User" />
+        </Link>
       </motion.div>
       <motion.div
         className="w-[54px] h-[54px] "
         whileHover={{ rotate: 360 }}
         transition={{ duration: 0.5 }}
       >
-        <Image src={Logo} alt="User" />
+        <Link href={"/"}>
+          <Image src={Logo} alt="User" />
+        </Link>
       </motion.div>
       <motion.div
         className="w-[28px] h-[28px] "
@@ -100,7 +105,10 @@ const MobileHeader = () => {
                   transition={{ delay: index * 0.1 }}
                 >
                   <p className="text-[16px] text-mainColor">
-                    <Link href={typeof item === "string" ? "#" : item.href} onClick={handleLinkClick}>
+                    <Link
+                      href={typeof item === "string" ? "#" : item.href}
+                      onClick={handleLinkClick}
+                    >
                       {typeof item === "string" ? item : item.item}
                     </Link>
                   </p>
