@@ -1,8 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import Image1 from "@/public/assets/3InfluencerImg1.png";
-import { FollowUpCallsItems , repeatedItems } from "./FollowUpCallsItems";
-
+import { repeatedItems } from "./FollowUpCallsItems";
 
 const FollowUpCalls = () => {
   return (
