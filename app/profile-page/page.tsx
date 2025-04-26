@@ -1,6 +1,11 @@
 import Leaderboard from '@/components/Profile-Page/Favourite-Influencer'
 import ProfilePage from '@/components/Profile-Page/Profile-Page'
+import { Metadata } from 'next'
 import React from 'react'
+
+export const metadata: Metadata = {
+  title: 'Profile',
+}
 
 const Home = () => {
   return (
